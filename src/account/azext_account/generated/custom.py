@@ -13,54 +13,54 @@ def account_subscription_create_subscription(cmd, client,
                                              billing_account_name,
                                              billing_profile_name,
                                              invoice_section_name,
-                                             body_display_name,
-                                             body_sku_id,
-                                             body_cost_center=None,
-                                             body_owner=None,
-                                             body_management_group_id=None):
+                                             display_name,
+                                             sku_id,
+                                             cost_center=None,
+                                             owner=None,
+                                             management_group_id=None):
 
     body = {}
-    body['display_name'] = body_display_name
-    body['sku_id'] = body_sku_id
-    body['cost_center'] = body_cost_center
-    body['owner'] = {'object_id': body_owner}
-    body['management_group_id'] = body_management_group_id
+    body['display_name'] = display_name
+    body['sku_id'] = sku_id
+    body['cost_center'] = cost_center
+    body['owner'] = {'object_id': owner}
+    body['management_group_id'] = management_group_id
     return client.create_subscription(billing_account_name=billing_account_name, billing_profile_name=billing_profile_name, invoice_section_name=invoice_section_name, body=body)
 
 
 def account_subscription_create_subscription_in_enrollment_account(cmd, client,
                                                                    enrollment_account_name,
-                                                                   body_display_name=None,
-                                                                   body_management_group_id=None,
-                                                                   body_owners=None,
-                                                                   body_offer_type=None):
-    if body_owners is not None:
-        body_owners = [{'object_id': x} for x in body_owners]
+                                                                   display_name=None,
+                                                                   management_group_id=None,
+                                                                   owners=None,
+                                                                   offer_type=None):
+    if owners is not None:
+        owners = [{'object_id': x} for x in owners]
 
     body = {}
-    body['display_name'] = body_display_name
-    body['management_group_id'] = body_management_group_id
-    body['owners'] = body_owners
-    body['offer_type'] = body_offer_type
+    body['display_name'] = display_name
+    body['management_group_id'] = management_group_id
+    body['owners'] = owners
+    body['offer_type'] = offer_type
     return client.create_subscription_in_enrollment_account(enrollment_account_name=enrollment_account_name, body=body)
 
 
 def account_subscription_create_csp_subscription(cmd, client,
                                                  billing_account_name,
                                                  customer_name,
-                                                 body_display_name,
-                                                 body_sku_id,
-                                                 body_reseller_id=None):
+                                                 display_name,
+                                                 sku_id,
+                                                 reseller_id=None):
     body = {}
-    body['display_name'] = body_display_name
-    body['sku_id'] = body_sku_id
-    body['reseller_id'] = body_reseller_id
+    body['display_name'] = display_name
+    body['sku_id'] = sku_id
+    body['reseller_id'] = reseller_id
     return client.create_csp_subscription(billing_account_name=billing_account_name, customer_name=customer_name, body=body)
 
 
 def account_subscription_rename(cmd, client, subscription_id,
-                                body_subscription_name=None):
-    return client.rename(subscription_id=subscription_id, subscription_name=body_subscription_name)
+                                subscription_name=None):
+    return client.rename(subscription_id=subscription_id, subscription_name=subscription_name)
 
 
 def account_subscription_cancel(cmd, client, subscription_id):

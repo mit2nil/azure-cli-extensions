@@ -30,10 +30,3 @@ def load_command_table(self, _):
         client_factory=cf_subscription_operation)
     with self.command_group('account subscription-operation', account_subscription_operation, client_factory=cf_subscription_operation) as g:
         g.custom_show_command('show', 'account_subscription_operation_show')
-
-    from azext_account.generated._client_factory import cf_operation
-    account_operation = CliCommandType(
-        operations_tmpl='azext_account.vendored_sdks.subscription.operations._operation_operations#OperationOperations.{}',
-        client_factory=cf_operation)
-    with self.command_group('account operation', account_operation, client_factory=cf_operation) as g:
-        g.custom_command('list', 'account_operation_list')
