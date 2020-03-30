@@ -32,10 +32,10 @@ helps['account subscription create-subscription-in-enrollment-account'] = """
     examples:
       - name: createSubscription
         text: |-
-               az account subscription create-subscription-in-enrollment-account --display-name
-               "Test Ea Azure Sub" --offer-type "MS-AZR-0017P" --owners
-               object-id=973034ff-acb7-409c-b731-e789672c7b31 --owners
-               object-id=67439a9e-8519-4016-a630-f5f805eba567 --enrollment-account-name
+               az account subscription create-subscription-in-enrollment-account --display-name \\
+               "Test Ea Azure Sub" --offer-type "MS-AZR-0017P" --owners \\
+               object-id=973034ff-acb7-409c-b731-e789672c7b31 --owners \\
+               object-id=67439a9e-8519-4016-a630-f5f805eba567 --enrollment-account-name \\
                "73f8ab6e-cfa0-42be-b886-be6e77c2980c"
 """
 
@@ -45,9 +45,9 @@ helps['account subscription create-csp-subscription'] = """
     examples:
       - name: createSubscription
         text: |-
-               az account subscription create-csp-subscription --billing-account-name
-               "2bc54a6f-8d8a-5be1-5bff-bb4f285f512b:11a72812-d9a4-446e-9a1e-70c8bcadf5c0_2019-05-31"
-               --display-name "Contoso MCA subscription" --sku-id "0001" --customer-name
+               az account subscription create-csp-subscription --billing-account-name \\
+               "2bc54a6f-8d8a-5be1-5bff-bb4f285f512b:11a72812-d9a4-446e-9a1e-70c8bcadf5c0_2019-05-31" \\
+               --display-name "Contoso MCA subscription" --sku-id "0001" --customer-name \\
                "e33ba30d-3718-4b15-bfaa-5627a57cda6f"
 """
 
