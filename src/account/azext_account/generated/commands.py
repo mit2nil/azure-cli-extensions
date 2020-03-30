@@ -23,10 +23,3 @@ def load_command_table(self, _):
         g.custom_command('rename', 'account_subscription_rename')
         g.custom_command('cancel', 'account_subscription_cancel')
         g.custom_command('enable', 'account_subscription_enable')
-
-    from azext_account.generated._client_factory import cf_subscription_operation
-    account_subscription_operation = CliCommandType(
-        operations_tmpl='azext_account.vendored_sdks.subscription.operations._subscription_operation_operations#SubscriptionOperationOperations.{}',
-        client_factory=cf_subscription_operation)
-    with self.command_group('account subscription-operation', account_subscription_operation, client_factory=cf_subscription_operation) as g:
-        g.custom_show_command('show', 'account_subscription_operation_show')

@@ -69,12 +69,3 @@ def account_subscription_cancel(cmd, client, subscription_id):
 
 def account_subscription_enable(cmd, client, subscription_id):
     return client.enable(subscription_id=subscription_id)
-
-
-def account_subscription_operation_show(cmd, client,
-                                        operation_id):
-    return client.get(operation_id=operation_id)
-
-
-def account_operation_list(cmd, client):
-    return client.list()

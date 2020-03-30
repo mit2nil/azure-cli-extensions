@@ -77,18 +77,3 @@ helps['account subscription enable'] = """
         text: |-
                az account subscription enable --subscription-id "7948bcee-488c-47ce-941c-38e20ede803d"
 """
-
-helps['account subscription-operation'] = """
-    type: group
-    short-summary: account subscription-operation
-"""
-
-helps['account subscription-operation show'] = """
-    type: command
-    short-summary: Get the status of the pending Microsoft.Subscription API operations.
-    examples:
-      - name: getPendingSubscriptionOperations
-        text: |-
-               az account subscription-operation show --operation-id
-               "e4b8d068-f574-462a-a76f-6fa0afc613c9"
-"""
