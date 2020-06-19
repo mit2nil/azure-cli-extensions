@@ -425,6 +425,25 @@ az extension add --name support
         --quota-change-regions "EastUS" \
         --quota-change-version "1.0" \
         --quota-change-subtype "BatchAml"
+
+    # Create a ticket to request Quota increase for Azure SQL managed instance.
+     az support tickets create \
+        --contact-country "USA" \
+        --contact-email "abc@contoso.com" \
+        --contact-first-name "Foo" \
+        --contact-language "en-US" \
+        --contact-last-name "Bar" \
+        --contact-method "email" \
+        --contact-timezone "Pacific Standard Time" \
+        --description "QuotaTicketDescription" \
+        --problem-classification "/providers/Microsoft.Support/services/QuotaServiceNameGuid/problemClassifications/SqlMiQuotaProblemClassificationNameGuid" \
+        --severity "minimal" \
+        --ticket-name "QuotaTestTicketName" \
+        --title "QuotaTicketTitle" \
+        --quota-change-payload "{\"NewLimit\":200, \"Type\":\"vCore\"}" "{\"NewLimit\":200, \"Type\":\"Subnet\"}" \
+        --quota-change-regions "EastUS" "EastUS" \
+        --quota-change-version "1.0" \
+        --quota-change-subtype "SQLMI"
     ```
 
 ### *"Communications"* commands ###

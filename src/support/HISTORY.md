@@ -1,6 +1,10 @@
 Release History
 ===============
 
+1.0.3
+-----
+* Added new quota ticket creation example for SQL MI
+
 1.0.2
 -----
 * Removed custom error message in lieu of error message coming from backend.
